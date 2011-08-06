@@ -27,13 +27,13 @@ import android.view.View;
 
 public class dinner extends Activity {
 	String menutime1 = menuonly.parsing.menutime1;
-	String menulist1 = menuonly.parsing.menulist1;
+	String menulist9 = menuonly.parsing.menulist9;
 	String menutime2 = menuonly.parsing.menutime2;
-	String menulist2 = menuonly.parsing.menulist2;
+	String menulist10 = menuonly.parsing.menulist10;
 	String menutime3 = menuonly.parsing.menutime3;
-	String menulist3 = menuonly.parsing.menulist3;
+	String menulist11 = menuonly.parsing.menulist11;
 	String menutime4 = menuonly.parsing.menutime4;
-	String menulist4 = menuonly.parsing.menulist4;
+	String menulist12 = menuonly.parsing.menulist12;
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
@@ -42,23 +42,23 @@ public class dinner extends Activity {
 		result1.setText(menutime1);
 		
 		TextView result2 = (TextView) findViewById(R.id.menu1);
-		result2.setText(menulist1);
+		result2.setText(menulist9);
 		
 		TextView result3 = (TextView) findViewById(R.id.time2);
 		result3.setText(menutime2);
 		
 		TextView result4 = (TextView) findViewById(R.id.menu2);
-		result4.setText(menulist2);
+		result4.setText(menulist10);
 		
 		TextView result5 = (TextView) findViewById(R.id.time3);
 		result5.setText(menutime3);
 		
 		TextView result6 = (TextView) findViewById(R.id.menu3);
-		result6.setText(menulist3);
+		result6.setText(menulist11);
 		
 		TextView result7 = (TextView) findViewById(R.id.time4);
 		result7.setText(menutime4);
 		
 		TextView result8 = (TextView) findViewById(R.id.menu4);
-		result8.setText(menulist4);
+		result8.setText(menulist12);
 }}
