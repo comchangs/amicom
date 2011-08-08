@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   >
+
+<TextView  
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    android:text="2011년  8월"
+    android:textSize="20sp"
+    android:gravity="center"/>
+</LinearLayout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   >
+ 
+ <TextView  android:layout_width="60px"  android:layout_height="60px" android:text="일" android:gravity="center" android:textColor="#ff0000" />
+ <TextView  android:layout_width="60px"  android:layout_height="60px" android:text="월" android:gravity="center" />
+ <TextView  android:layout_width="60px"  android:layout_height="60px" android:text="화" android:gravity="center" />
+ <TextView  android:layout_width="60px"  android:layout_height="60px" android:text="수" android:gravity="center" />
+ <TextView  android:layout_width="60px"  android:layout_height="60px" android:text="목" android:gravity="center" />
+ <TextView  android:layout_width="60px"  android:layout_height="60px" android:text="금" android:gravity="center" />
+ <TextView  android:layout_width="60px"  android:layout_height="60px" android:text="토" android:gravity="center" android:textColor="#0000ff" />
+              
+ </LinearLayout>
+ 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+  
+  <Button android:id="@+id/btn1" android:layout_width="60px" android:layout_height="60px" android:text="31" android:textColor="#ff0000" android:visibility="invisible" /> 
+  <Button android:id="@+id/btn2" android:layout_width="60px" android:layout_height="60px" android:text="1" /> 
+  <Button android:id="@+id/btn3" android:layout_width="60px" android:layout_height="60px" android:text="2" /> 
+  <Button android:id="@+id/btn4" android:layout_width="60px" android:layout_height="60px" android:text="3" /> 
+  <Button android:id="@+id/btn5" android:layout_width="60px" android:layout_height="60px" android:text="4" /> 
+  <Button android:id="@+id/btn6" android:layout_width="60px" android:layout_height="60px" android:text="5" /> 
+  <Button android:id="@+id/btn7" android:layout_width="60px" android:layout_height="60px" android:text="6" android:textColor="#0000ff"  /> 
+   </LinearLayout>
+ 
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+  
+  <Button android:id="@+id/btn01" android:layout_width="60px" android:layout_height="60px" android:text="7" android:textColor="#ff0000" /> 
+  <Button android:id="@+id/btn02" android:layout_width="60px" android:layout_height="60px" android:text="8" /> 
+  <Button android:id="@+id/btn03" android:layout_width="60px" android:layout_height="60px" android:text="9" /> 
+  <Button android:id="@+id/btn04" android:layout_width="60px" android:layout_height="60px" android:text="10" /> 
+  <Button android:id="@+id/btn05" android:layout_width="60px" android:layout_height="60px" android:text="11" /> 
+  <Button android:id="@+id/btn06" android:layout_width="60px" android:layout_height="60px" android:text="12" /> 
+  <Button android:id="@+id/btn07" android:layout_width="60px" android:layout_height="60px" android:text="13" android:textColor="#0000ff" /> 
+ 
+</LinearLayout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+  
+  <Button android:id="@+id/btn001" android:layout_width="60px" android:layout_height="60px" android:text="14" android:textColor="#ff0000" /> 
+  <Button android:id="@+id/btn002" android:layout_width="60px" android:layout_height="60px" android:text="15" /> 
+  <Button android:id="@+id/btn003" android:layout_width="60px" android:layout_height="60px" android:text="16" /> 
+  <Button android:id="@+id/btn004" android:layout_width="60px" android:layout_height="60px" android:text="17" /> 
+  <Button android:id="@+id/btn005" android:layout_width="60px" android:layout_height="60px" android:text="18" /> 
+  <Button android:id="@+id/btn006" android:layout_width="60px" android:layout_height="60px" android:text="19" /> 
+  <Button android:id="@+id/btn007" android:layout_width="60px" android:layout_height="60px" android:text="20" android:textColor="#0000ff" /> 
+ 
+</LinearLayout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+  
+  <Button android:id="@+id/btn0001" android:layout_width="60px" android:layout_height="60px" android:text="21" android:textColor="#ff0000" /> 
+  <Button android:id="@+id/btn0002" android:layout_width="60px" android:layout_height="60px" android:text="22" /> 
+  <Button android:id="@+id/btn0003" android:layout_width="60px" android:layout_height="60px" android:text="23" /> 
+  <Button android:id="@+id/btn0004" android:layout_width="60px" android:layout_height="60px" android:text="24" /> 
+  <Button android:id="@+id/btn0005" android:layout_width="60px" android:layout_height="60px" android:text="25" /> 
+  <Button android:id="@+id/btn0006" android:layout_width="60px" android:layout_height="60px" android:text="26" /> 
+  <Button android:id="@+id/btn0007" android:layout_width="60px" android:layout_height="60px" android:text="27" android:textColor="#0000ff" /> 
+ 
+</LinearLayout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+  
+  <Button android:id="@+id/btn00001" android:layout_width="60px" android:layout_height="60px" android:text="28" android:textColor="#ff0000" /> 
+  <Button android:id="@+id/btn00002" android:layout_width="60px" android:layout_height="60px" android:text="29" /> 
+  <Button android:id="@+id/btn00003" android:layout_width="60px" android:layout_height="60px" android:text="30" /> 
+  <Button android:id="@+id/btn00004" android:layout_width="60px" android:layout_height="60px" android:text="31" /> 
+  <Button android:id="@+id/btn00005" android:layout_width="60px" android:layout_height="60px" android:text="1" android:visibility="invisible" /> 
+  <Button android:id="@+id/btn00006" android:layout_width="60px" android:layout_height="60px" android:text="2" android:visibility="invisible" /> 
+  <Button android:id="@+id/btn00007" android:layout_width="60px" android:layout_height="60px" android:text="3" android:visibility="invisible" android:textColor="#0000ff" /> 
+ 
+</LinearLayout>
+</LinearLayout>
