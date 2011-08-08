@@ -16,6 +16,7 @@ import amicom.test.R.string;
 import android.app.*;
 import android.os.*;
 import android.sax.*;
+import android.util.*;
 import android.view.*;
 import android.widget.*;
 
@@ -29,22 +30,22 @@ import android.view.View;
 public class parsing {
 
 	public static String menulist[] = new String[50];
-	public static String menulist1 = "";
-	public static String menulist2 = "";
-	public static String menulist3 = "";
-	public static String menulist4 = "";
-	public static String menulist5 = "";
-	public static String menulist6 = "";
-	public static String menulist7 = "";
-	public static String menulist8 = "";
-	public static String menulist9 = "";
-	public static String menulist10 = "";
-	public static String menulist11 = "";
-	public static String menulist12 = "";
-	public static String menulist13 = "";
-	public static String menulist14 = "";
-	public static String menulist15 = "";
-	public static String menulist16 = "";
+	public static String menulist1 = "등록된 식단이 없습니다.\n";
+	public static String menulist2 = "등록된 식단이 없습니다.\n";
+	public static String menulist3 = "등록된 식단이 없습니다.\n";
+	public static String menulist4 = "등록된 식단이 없습니다.\n";
+	public static String menulist5 = "등록된 식단이 없습니다.\n";
+	public static String menulist6 = "등록된 식단이 없습니다.\n";
+	public static String menulist7 = "등록된 식단이 없습니다.\n";
+	public static String menulist8 = "등록된 식단이 없습니다.\n";
+	public static String menulist9 = "등록된 식단이 없습니다.\n";
+	public static String menulist10 = "등록된 식단이 없습니다.\n";
+	public static String menulist11 = "등록된 식단이 없습니다.\n";
+	public static String menulist12 = "등록된 식단이 없습니다.\n";
+	public static String menulist13 = "등록된 식단이 없습니다.\n";
+	public static String menulist14 = "등록된 식단이 없습니다.\n";
+	public static String menulist15 = "등록된 식단이 없습니다.\n";
+	public static String menulist16 = "등록된 식단이 없습니다.\n";
 	
 
 	public static String menutime1 = "";
@@ -52,7 +53,8 @@ public class parsing {
 	public static String menutime3 = "";
 	public static String menutime4 = "";
 
-	
+	String food = "->";
+	String nomenu = "등록된 식단이 없습니다.";
 	
 	public parsing() {
 
@@ -69,7 +71,7 @@ public class parsing {
 		String cafeend = "<!-- 교직원식당 테이블 끝 -->";
 		String cafename1 = "dummy_string";
 		String cafename2 = "lineend";
-		String nomenu = "등록된 식단이 없습니다.";
+		
 
 		String breakfast = "아침";
 		String lunch = "점심";
@@ -93,8 +95,7 @@ public class parsing {
 			for (;;) {
 				String line = br.readLine();
 				String linecapy = line;
-				
-				
+								
 				
 				int check3 = linecapy.indexOf(nomenu);
 				if (check3 != linecompare) {
@@ -140,7 +141,7 @@ public class parsing {
 					String menumod4 = menumod3.replaceFirst(startmenu, "");
 					String menumod5 = menumod4.replaceFirst(endmenu, "\n");
 
-					menulist[listnum] = menumod5;
+					menulist[listnum] = food + menumod5;
 					listnum += 1;
 				}
 
@@ -190,20 +191,15 @@ public class parsing {
 		}
 
 		for (allline = cutline; allline < listnum; allline++) {
-			
 			int cafecheck1 = menulist[allline].indexOf(menutime1);	//아향시작
 			if (cafecheck1 != linecompare) {
 				allline += 1;
-				if (menulist[allline] == nomenu) {
-					menulist1 = nomenu + "\n";
-					menulist5 = nomenu + "\n";
-					menulist9 = nomenu + "\n";
-					menulist13 = nomenu + "\n";
-				}			
+				
 				int divcheck1 = menulist[allline].indexOf(breakfast);	//아침
 				if (divcheck1 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(lunch) == linecompare);allline += 1){
+					menulist1 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist1 += menulist[allline];			//아침메뉴
 					}					
 				}
@@ -211,7 +207,8 @@ public class parsing {
 				int divcheck5 = menulist[allline].indexOf(lunch);	//점심
 				if (divcheck5 != linecompare ) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(dinner) == linecompare);allline += 1){
+					menulist5 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist5 += menulist[allline];		//점심메뉴
 					}
 				}
@@ -219,7 +216,8 @@ public class parsing {
 				int divcheck9 = menulist[allline].indexOf(dinner);	//저녁
 				if (divcheck9 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(snack) == linecompare);allline += 1){
+					menulist9 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist9 += menulist[allline];		//저녁메뉴
 					}
 				}
@@ -227,27 +225,25 @@ public class parsing {
 				int divcheck13 = menulist[allline].indexOf(snack);	//분식
 				if (divcheck13 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(menutime2) == linecompare);allline += 1){
+					menulist13 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist13 += menulist[allline];	//분식메뉴
 					}
 				}
 				
 			}
 			
-			
+				
+
 			int cafecheck2 = menulist[allline].indexOf(menutime2);	//학식시작
 			if (cafecheck2 != linecompare) {
 				allline += 1;
-				if (menulist[allline] == nomenu) {
-					menulist2 = nomenu + "\n";
-					menulist6 = nomenu + "\n";
-					menulist10 = nomenu + "\n";
-					menulist14 = nomenu + "\n";
-				}				
+					
 				int divcheck2 = menulist[allline].indexOf(breakfast);	//아침
 				if (divcheck2 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(lunch) == linecompare);allline += 1){
+					menulist2 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist2 += menulist[allline];			//아침메뉴
 					}					
 				}
@@ -255,7 +251,8 @@ public class parsing {
 				int divcheck6 = menulist[allline].indexOf(lunch);	//점심
 				if (divcheck6 != linecompare ) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(dinner) == linecompare);allline += 1){
+					menulist6 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist6 += menulist[allline];		//점심메뉴
 					}
 				}
@@ -263,7 +260,8 @@ public class parsing {
 				int divcheck10 = menulist[allline].indexOf(dinner);	//저녁
 				if (divcheck10 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(snack) == linecompare);allline += 1){
+					menulist10 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist10 += menulist[allline];		//저녁메뉴
 					}
 				}
@@ -271,7 +269,8 @@ public class parsing {
 				int divcheck14 = menulist[allline].indexOf(snack);	//분식
 				if (divcheck14 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(menutime3) == linecompare);allline += 1){
+					menulist14 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist14 += menulist[allline];	//분식메뉴
 					}
 				}
@@ -283,16 +282,12 @@ public class parsing {
 			int cafecheck3 = menulist[allline].indexOf(menutime3);	//기식시작
 			if (cafecheck3 != linecompare) {
 				allline += 1;
-				if (menulist[allline] == nomenu) {
-					menulist3 = nomenu + "\n";
-					menulist7 = nomenu + "\n";
-					menulist11 = nomenu + "\n";
-					menulist15 = nomenu + "\n";
-				}	
+				
 				int divcheck3 = menulist[allline].indexOf(breakfast);	//아침
 				if (divcheck3 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(lunch) == linecompare);allline += 1){
+					menulist3 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist3 += menulist[allline];			//아침메뉴
 					}					
 				}
@@ -300,7 +295,8 @@ public class parsing {
 				int divcheck7 = menulist[allline].indexOf(lunch);	//점심
 				if (divcheck7 != linecompare ) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(dinner) == linecompare);allline += 1){
+					menulist7 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist7 += menulist[allline];		//점심메뉴
 					}
 				}
@@ -308,7 +304,8 @@ public class parsing {
 				int divcheck11 = menulist[allline].indexOf(dinner);	//저녁
 				if (divcheck11 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(snack) == linecompare);allline += 1){
+					menulist11 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist11 += menulist[allline];		//저녁메뉴
 					}
 				}
@@ -316,64 +313,75 @@ public class parsing {
 				int divcheck15 = menulist[allline].indexOf(snack);	//분식
 				if (divcheck15 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(menutime4) == linecompare);allline += 1){
+					menulist15 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist15 += menulist[allline];	//분식메뉴
 					}
 				}
 				
 			}
-			
+			Log.i("jin","OK");
 			int cafecheck4 = menulist[allline].indexOf(menutime4);	//교직원시작
+			
 			if (cafecheck4 != linecompare) {
 				allline += 1;
-				if (menulist[allline] == nomenu) {
-					menulist4 = nomenu + "\n";
-					menulist8 = nomenu + "\n";
-					menulist12 = nomenu + "\n";
-					menulist16 = nomenu + "\n";
-				}	
+				
+				
 				int divcheck4 = menulist[allline].indexOf(breakfast);	//아침
 				if (divcheck4 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(lunch) == linecompare);allline += 1){
+					menulist4 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
+						Log.i("jin","breakfast2OK");
 						menulist4 += menulist[allline];			//아침메뉴
 					}					
 				}
 				
 				int divcheck8 = menulist[allline].indexOf(lunch);	//점심
 				if (divcheck8 != linecompare ) {
+					Log.i("jin","lunchOK");
 					allline += 1;
-					for(;(menulist[allline].indexOf(dinner) == linecompare);allline += 1){
-						menulist8 += menulist[allline];		//점심메뉴
+					menulist8 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
+						menulist8 += menulist[allline];
+						
 					}
 				}
 				
 				int divcheck12 = menulist[allline].indexOf(dinner);	//저녁
 				if (divcheck12 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(snack) == linecompare);allline += 1){
-						menulist12 += menulist[allline];		//저녁메뉴
+					menulist12 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
+						menulist12 += menulist[allline];
+						//저녁메뉴
 					}
 				}
 				
 				int divcheck16 = menulist[allline].indexOf(snack);	//분식
 				if (divcheck16 != linecompare) {
 					allline += 1;
-					for(;(menulist[allline].indexOf(cafename2) == linecompare);allline += 1){
+					menulist16 ="";
+					for(;(menulist[allline].indexOf(food) != linecompare);allline += 1){
 						menulist16 += menulist[allline];	//분식메뉴
 					}
 				}
 				
 			}
 
+
+			
+			
+	
+			
+			
+
 			if (menulist[allline] == cafename2)
 				break;
 			
 			
 			
-		
-		}	//전체 for문 닫기 
-	
+		}
 			
 		
 	}
