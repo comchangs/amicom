@@ -23,7 +23,7 @@ public class Timer extends Activity{
 		Handler mhandler = new Handler() {
 		 public void handleMessage(Message msg){
 			 value++;
-			 mText.setText("TIME = " + value);
+			 mText.setText("경과시간 = " + value);
 			 mhandler.sendEmptyMessageDelayed(0,1000);
 		 } 
 		};

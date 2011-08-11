@@ -13,14 +13,14 @@
     android:textColor="#ffff00" 
     android:layout_height="wrap_content" 
     android:text="점수 :0" 
-    android:textSize="40sp" 
+    android:textSize="20sp" 
     android:layout_width="wrap_content">
     </TextView>
     <TextView android:layout_gravity="right" 
     android:textColor="#ff0000" 
     android:layout_height="wrap_content" 
     android:text="시간 00:00" 
-    android:textSize="40sp" 
+    android:textSize="20sp" 
 android:layout_width="wrap_content"
 android:id="@+id/timer"></TextView>
 </LinearLayout>
@@ -34,13 +34,13 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+  android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
     <ImageButton
     android:id="@+id/click2"  
     android:onClick="mOnClick"
-    android:src="@drawable/mogura2"
+    android:src="@drawable/btn_off_out"
     android:background="#000000"
     android:layout_width="wrap_content" android:layout_height="wrap_content"/>
       <ImageButton
@@ -48,7 +48,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+    android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
       <ImageButton
@@ -56,7 +56,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+    android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
 </LinearLayout>
@@ -69,7 +69,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-     android:src="@drawable/mogura1"
+     android:src="@drawable/btn_on_off"
      android:background="#000000"
     />
     <ImageButton
@@ -77,7 +77,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+  android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
       <ImageButton
@@ -85,7 +85,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura2"
+    android:src="@drawable/btn_off_out"
     android:background="#000000"
     />
       <ImageButton
@@ -93,7 +93,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura2"
+  android:src="@drawable/btn_off_out"
     android:background="#000000"
     />
 </LinearLayout>
@@ -106,7 +106,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-     android:src="@drawable/mogura2"
+   android:src="@drawable/btn_off_out"
      android:background="#000000"
     />
     <ImageButton
@@ -114,7 +114,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+  android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
       <ImageButton
@@ -122,7 +122,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+ android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
       <ImageButton
@@ -130,7 +130,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+   android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
 </LinearLayout>
@@ -143,7 +143,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-     android:src="@drawable/mogura2"
+ android:src="@drawable/btn_off_out"
      android:background="#000000"
     />
     <ImageButton
@@ -151,7 +151,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+    android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
       <ImageButton
@@ -159,7 +159,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura2"
+      android:src="@drawable/btn_off_out"
     android:background="#000000"
     />
       <ImageButton
@@ -167,7 +167,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura2"
+   android:src="@drawable/btn_off_out"
     android:background="#000000"
     />
 </LinearLayout>
@@ -179,7 +179,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-     android:src="@drawable/mogura2"
+   android:src="@drawable/btn_off_out"
      android:background="#000000"
     />
     <ImageButton
@@ -187,7 +187,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+     android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
       <ImageButton
@@ -195,7 +195,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura1"
+  android:src="@drawable/btn_on_off"
     android:background="#000000"
     />
       <ImageButton
@@ -203,7 +203,7 @@ android:id="@+id/timer"></TextView>
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content" 
     android:onClick="mOnClick"
-    android:src="@drawable/mogura2"
+ android:src="@drawable/btn_off_out"
     android:background="#000000"
     />
 </LinearLayout>
