@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/LinearLayout01" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android">	
+<TextView android:text="@+id/TextView01" android:id="@+id/sub1" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+<TextView android:text="@+id/TextView02" android:id="@+id/sub2" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+<TextView android:text="@+id/TextView03" android:id="@+id/sub3" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+<TextView android:text="@+id/TextView04" android:id="@+id/sub4" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+<TextView android:text="@+id/TextView05" android:id="@+id/sub5" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+<TextView android:text="@+id/TextView06" android:id="@+id/sub6" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+<TextView android:text="@+id/TextView07" android:id="@+id/sub7" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+<TextView android:text="@+id/TextView08" android:id="@+id/sub8" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+<TextView android:text="@+id/TextView09" android:id="@+id/sub9" android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+
+
+</LinearLayout>
