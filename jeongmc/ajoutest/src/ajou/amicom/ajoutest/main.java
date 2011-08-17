@@ -64,7 +64,7 @@ public class main extends Activity {
 
 			StringBuffer buffer = new StringBuffer();
 
-			String stdnum = "200621756"; // 학번
+			String stdnum = ""; // 학번
 			String parameter = null;
 			parameter = new String(
 					"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
