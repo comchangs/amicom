@@ -1,0 +1,15 @@
+
+<AbsoluteLayout android:id="@+id/AbsoluteLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/main">
+<TextView
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:text="@string/hello"
+/>
+<TextView
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="10pt"
+android:textColor="#aa1111"
+android:text="@string/introduce"
+/>
+</AbsoluteLayout>

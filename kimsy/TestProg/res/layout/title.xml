@@ -2,4 +2,6 @@
 <AbsoluteLayout android:id="@+id/AbsoluteLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/main">
 <Button android:id="@+id/Button01" android:layout_height="wrap_content" android:layout_x="95dip" android:text="GOGOGOGO" android:layout_width="130px" android:layout_y="180dip"></Button>
 <Button android:id="@+id/Button02" android:layout_height="wrap_content" android:layout_x="95dip" android:layout_width="130px" android:text="Exit" android:layout_y="240dip"></Button>
+<Button android:id="@+id/Button03" android:layout_height="wrap_content" android:layout_x="95dip" android:layout_width="130px" android:text="rank" android:layout_y="300dip"></Button>
+<Button android:id="@+id/Button04" android:layout_height="wrap_content" android:layout_x="95dip" android:layout_width="130px" android:text="help" android:layout_y="360dip"></Button>
 </AbsoluteLayout>
