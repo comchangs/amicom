@@ -10,8 +10,9 @@
 			</intent-filter>
 			<meta-data android:name="android.appwidget.provider"
 				android:resource="@xml/watch_widget_provider" />
+			<service android:enabled="true" android:name=".WatchWidget$UpdateService" />
 		</receiver>
-<service android:enabled="true" android:name=".WatchWidget$UpdateService" />
+
 	</application>
 	<uses-sdk android:minSdkVersion="3" />
 </manifest>
