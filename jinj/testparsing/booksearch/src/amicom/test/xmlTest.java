@@ -1,5 +1,6 @@
 package amicom.test;
 
+
 import android.app.*;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 
 
 import android.app.Activity;
+import android.content.*;
+
 import java.util.ArrayList;
 import java.io.*;
 import java.net.*;
@@ -28,7 +31,7 @@ import android.widget.*;
 
 public class xmlTest extends Activity {
 	/** Called when the activity is first created. */
-	String cnt = "";
+	public static String cnt = "";
 	String []items = null;
 	@Override
 	
@@ -200,9 +203,54 @@ return content;
 
   }
  
+
+
+protected void onListItemClick(ListView l, View v, int position, long id) {
+	
+	switch (position) {
+	case 0: {
+		Intent intent = new Intent(xmlTest.this, list0.class);
+		startActivity(intent);
+		break;
+	}
+	
+	case 1: {
+		Intent intent = new Intent(xmlTest.this, list1.class);
+		startActivity(intent);
+		break;
+    	}
+      
+	
+	
+	case 2: {
+		Intent intent = new Intent(xmlTest.this, list2.class);
+		startActivity(intent);
+		break;
+	}
+    
+	case 3: {
+		Intent intent = new Intent(xmlTest.this, list3.class);
+		startActivity(intent);
+		break;
+		}
+    
+	case 4: {
+		Intent intent = new Intent(xmlTest.this, list4.class);
+		startActivity(intent);
+		break;
+    	}
+	
+	case 5: {
+		Intent intent = new Intent(xmlTest.this, list5.class);
+		startActivity(intent);
+		break;
+		}
+	
+	
+	}
 }
 
-
+}
 
 
 
