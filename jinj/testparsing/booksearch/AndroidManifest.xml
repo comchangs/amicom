@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<activity android:name=".booklist"></activity>
+<activity android:name=".list0"></activity>
+<activity android:name=".list1"></activity>
+<activity android:name=".list2"></activity>
+<activity android:name=".list3"></activity>
+<activity android:name=".list4"></activity>
+<activity android:name=".list5"></activity>
     </application>
 </manifest>
