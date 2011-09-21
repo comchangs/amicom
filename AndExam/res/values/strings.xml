@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, AndExam!</string>
+    <string name="app_name">AndExam</string>
+    <string name="insa">Hello</string>
+    <string name="anyoung">안녕하세요</string>
+    <string name="textstr">Resource Text</string>
+    <string name="attrbtn">Attr Button</string>
+    <string name="multi_caption">MultiLang</string>
+    <string name="multi_textcaption">This program supports Korean and English</string>
+    <string name="multi_buttoncaption">Press me</string>
+    <string name="multi_smile">^_^</string>
+    <string name="multi_smiletext">Let\'s smile</string>
+    <string name="multi_toasttext">You pressed button</string>
+</resources>
