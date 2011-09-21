@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textsize">20sp</dimen>
+	<dimen name="drawunit_width">160dip</dimen>
+	<dimen name="drawunit_height">60dip</dimen>
+</resources>
