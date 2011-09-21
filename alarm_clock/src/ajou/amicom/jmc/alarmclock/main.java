@@ -1,7 +1,8 @@
 package ajou.amicom.jmc.alarmclock;
 
 import android.app.Activity;
-import android.os.Bundle;
+
+import android.os.*;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -38,11 +39,10 @@ public class main extends Activity
  
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
-
+  
+  
   //통지 매니저를 취득
   mNotification = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-
- 
 
   //알람 매니저를 취득
   mManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
@@ -89,10 +89,10 @@ public class main extends Activity
 
   //알람의 설정 시각에 발생하는 인텐트 작성
   private PendingIntent pendingIntent() {
-   Intent i = new Intent(getApplicationContext(), main.class);
+   Intent i = new Intent(getApplicationContext(),Dididi.class);
    PendingIntent pi = PendingIntent.getActivity(this, 0, i, 0);
    return pi;
-  }
+   }
 
   //일자 설정 클래스의 상태변화 리스너
   public void onDateChanged (DatePicker view, int year, int monthOfYear, int dayOfMonth) {
