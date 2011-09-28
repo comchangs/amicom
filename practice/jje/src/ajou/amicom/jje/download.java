@@ -16,27 +16,31 @@ public class download extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
- 
-		Button btn = (Button)findViewById(R.id.button);
+        Button btn = (Button)findViewById(R.id.button);
 		btn.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 				Thread uploadThread = new Thread() {
 					public void run() {
-						doUpload();
+						String html;
+						html = DownloadHtml("http://www.google.com"); 
+						TextView result = (TextView)findViewById(R.id.result);
+						result.setText(html);
 						mCompleteHandler.sendEmptyMessage(0);
 					}
 				};
-				bUploading = true;
-				uploadThread.start();//밑에 두 쓰레드가 시작
 				
-				String html;
-				html = DownloadHtml("http://www.google.com"); 
-				TextView result = (TextView)findViewById(R.id.result);
-				result.setText(html);
+				uploadThread.start();//밑에 두 쓰레드가 시작
 			}
 		});
 	}
-
+    public Handler mCompleteHandler = new Handler() {
+		public void handleMessage(Message msg) {
+			bUploading = false;			//왜 핸들러를 쓸까 : 안드로이드자체에다가 예약할걸 부탁한다
+			//멈추는듯한 모습 안보여줌
+			//Toast.makeText(C16_ANR2.this, "업로드를 완료했습니다.", 0).show();
+		}
+	};
+	
 	//* 자바의 네트워크 클래스 사용
 	String DownloadHtml(String addr) {
 		StringBuilder html = new StringBuilder(); 
@@ -62,19 +66,4 @@ public class download extends Activity {
 		catch (Exception ex) {;}
 		return html.toString();
 	}
-
-    
-	public Handler mCompleteHandler = new Handler() {
-		public void handleMessage(Message msg) {
-			bUploading = false;			//왜 핸들러를 쓸까 : 안드로이드자체에다가 예약할걸 부탁한다
-			//멈추는듯한 모습 안보여줌
-			//Toast.makeText(C16_ANR2.this, "업로드를 완료했습니다.", 0).show();
-		}
-	};
-	
-	void doUpload() {
-		for (int i = 0; i < 100; i++) {
-			try { Thread.sleep(100); } catch (InterruptedException e) {;}
-		}
 	}
-}
