@@ -11,8 +11,10 @@ import android.widget.*;
 public class download extends Activity {
 	boolean bUploading = false;
 	/** Called when the activity is first created. */
-    @Override
+	String html;
     
+	
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
@@ -21,10 +23,9 @@ public class download extends Activity {
 			public void onClick(View v) {
 				Thread uploadThread = new Thread() {
 					public void run() {
-						String html;
+						
 						html = DownloadHtml("http://www.google.com"); 
-						TextView result = (TextView)findViewById(R.id.result);
-						result.setText(html);
+						
 						mCompleteHandler.sendEmptyMessage(0);
 					}
 				};
@@ -38,6 +39,8 @@ public class download extends Activity {
 			bUploading = false;			//왜 핸들러를 쓸까 : 안드로이드자체에다가 예약할걸 부탁한다
 			//멈추는듯한 모습 안보여줌
 			//Toast.makeText(C16_ANR2.this, "업로드를 완료했습니다.", 0).show();
+			TextView result = (TextView)findViewById(R.id.result);
+			result.setText(html);
 		}
 	};
 	
