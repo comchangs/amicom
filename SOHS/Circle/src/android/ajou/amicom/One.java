@@ -1,105 +1,158 @@
 package android.ajou.amicom;
 
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.AttributeSet;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.MotionEvent;
 import android.view.View;
 
-public class One extends View{
-
-	 private static final float RADIUS = 30;
-	 private Paint backgroundPaint;
-	 private Paint myPaint1;
-	 private Paint myPaint2;
-	 private Paint myPaint3;
-	 private Paint myPaint4;
-	 private Paint myPaint5;
-	 private Paint myPaint6;
-	 
-	 public One(Context context, AttributeSet attrs){
-	 super(context, attrs);
-	 
-	 backgroundPaint = new Paint();
-	 backgroundPaint.setColor(Color.YELLOW);
-	 
-	 myPaint1 = new Paint();
-	 myPaint2 = new Paint();
-	 myPaint3 = new Paint();
-	 myPaint4 = new Paint();
-	 myPaint5 = new Paint();
-	 myPaint6 = new Paint();
-
-	 myPaint1.setColor(Color.BLUE);
-	 myPaint2.setColor(Color.BLUE);
-	 myPaint3.setColor(Color.BLUE);
-	 myPaint4.setColor(Color.BLUE);
-	 myPaint5.setColor(Color.BLUE);
-	 myPaint6.setColor(Color.BLUE);
-	 
-	 myPaint1.setAntiAlias(true);
-	 myPaint2.setAntiAlias(true);
-	 myPaint3.setAntiAlias(true);
-	 myPaint4.setAntiAlias(true);
-	 myPaint5.setAntiAlias(true);
-	 myPaint6.setAntiAlias(true);
-	 }
-
-	@Override
-	public boolean onTouchEvent(MotionEvent event){
-	 int action = event.getAction();
-	 switch(action){
-	 
-	 case MotionEvent.ACTION_DOWN:		 
-	 case MotionEvent.ACTION_MOVE:
-
-	 final float a = event.getX();
-	 final float b = event.getY();
-	 
-	 if(Math.sqrt(Math.pow(a - 240, 2) + Math.pow(b - 100, 2)) <= RADIUS){
-		 myPaint1.setColor(Color.RED);
-	 } 
-	 else if(Math.sqrt(Math.pow(a - 220, 2) + Math.pow(b - 120, 2)) <= RADIUS){
-		 myPaint2.setColor(Color.RED);
-	 }
-	 else if(Math.sqrt(Math.pow(a - 200, 2) + Math.pow(b - 140, 2)) <= RADIUS){
-		 myPaint3.setColor(Color.RED);
-	 }	
-	 else if(Math.sqrt(Math.pow(a - 180, 2) + Math.pow(b - 160, 2)) <= RADIUS){
-		 myPaint4.setColor(Color.RED);
-	 } 
-	 else if(Math.sqrt(Math.pow(a - 160, 2) + Math.pow(b - 180, 2)) <= RADIUS){
-		 myPaint5.setColor(Color.RED);
-	 }
-	 else if(Math.sqrt(Math.pow(a - 140, 2) + Math.pow(b - 200, 2)) <= RADIUS){
-		 myPaint6.setColor(Color.RED);
-	 }	
-	 return true;
-	 
-	 case MotionEvent.ACTION_UP:
-	 case MotionEvent.ACTION_CANCEL:
-	 
-	  break;
-	 }
-	 
-	 return(true);
-	} 
-
-	@Override
-	public void onDraw(Canvas canvas){
-	 int width = canvas.getWidth();
-	 int height = canvas.getHeight();
-	 canvas.drawRect(0, 0, width, height, backgroundPaint);
-	 canvas.drawCircle(240, 100, RADIUS, myPaint1);
-	 canvas.drawCircle(220, 120, RADIUS, myPaint2);
-	 canvas.drawCircle(200, 140, RADIUS, myPaint3);
-	 canvas.drawCircle(180, 160, RADIUS, myPaint4);
-	 canvas.drawCircle(160, 180, RADIUS, myPaint5);
-	 canvas.drawCircle(140, 200, RADIUS, myPaint6);
-
-	  invalidate();
+public class One extends Activity{
+	GameView gv;
+	
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		gv =  new GameView(this);
+		setContentView(gv);
 	}
 	
+
+	class Shape {
+		final static int CIRCLE = 0;
+		
+		int what;
+		int color;
+		Rect rt;
 	}
+	
+	class GameView extends View {
+		final static int BLANK = 0;
+		final static int PLAY = 1;
+		final static int DELAY = 1500;
+		int status;
+		ArrayList<Shape> arShape =  new ArrayList<Shape>();
+		Random Rnd = new Random();
+		Activity mParent;
+		
+		public GameView(Context context){
+			super(context);
+			mParent = (Activity)context;
+			status = BLANK;
+			mHandler.sendEmptyMessageDelayed(0,DELAY);
+		}
+		
+		public void onDraw(Canvas canvas) {
+			canvas.drawColor(Color.BLACK);
+			if (status == BLANK){
+				return;
+			}
+			
+			int idx;
+			for (idx = 0; idx < arShape.size(); idx++){
+				Paint Pnt =  new Paint();
+				Pnt.setAntiAlias(true);
+				Pnt.setColor(arShape.get(idx).color);
+				
+				Rect rt = arShape.get(idx).rt;
+				switch (arShape.get(idx).what){
+				case Shape.CIRCLE:
+					canvas.drawCircle(rt.left + rt.width()/2, rt.top + rt.height()/2, idx, Pnt);
+					break;
+				}
+			}
+		}
+		
+	void AddNewShape(){
+		Shape shape = new Shape();
+		int idx;
+		@SuppressWarnings("unused")
+		boolean bFindIntersect;
+		Rect rt = new Rect();
+	
+		for (;;){
+		
+			int Size =  32 + 16 * Rnd.nextInt(3);
+			
+			rt.left = Rnd.nextInt(getWidth());
+			rt.top = Rnd.nextInt(getHeight());
+			rt.right =  rt.left + Size;
+			rt.bottom = rt.top + Size;
+			
+			if(rt.right>getWidth()||rt.bottom>getHeight()){
+				continue;
+			}
+		
+			bFindIntersect = false;
+			for(idx = 0; idx< arShape.size(); idx ++){
+				if(rt.intersect(arShape.get(idx).rt) == true){
+					bFindIntersect = true;
+				}
+			}
+			
+			if (bFindIntersect = false){
+				break;
+			}
+		}
+		
+		shape.what = Rnd.nextInt(3);
+		
+		switch (Rnd.nextInt(5)){
+		case 0:
+			shape.color = Color.WHITE;
+			break;
+		case 1:
+			shape.color = Color.RED;
+			break;
+		case 2:
+			shape.color = Color.GREEN;
+			break;
+		case 3:
+			shape.color = Color.BLUE;
+			break;
+		case 4:
+			shape.color = Color.YELLOW;
+			break;
+		}
+		
+		shape.rt = rt;
+		arShape.add(shape);
+	}
+
+	int FindShapeIdx(int x, int y){
+		int idx;
+		
+		for (idx = 0; idx < arShape.size(); idx++){
+			if(arShape.get(idx).rt.contains(x,y)){
+				return idx;
+			}
+		}
+		return -1;
+	}
+	
+	Handler mHandler = new Handler(){
+		public void handleMessage(Message msg){
+			AddNewShape();
+			status = PLAY;
+			invalidate();
+			
+			String title;
+			title = "기억력게임-" + arShape.size() + "단계";
+			mParent.setTitle(title);
+		}
+	};
+ }
+}
+
+	 
