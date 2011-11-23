@@ -42,8 +42,6 @@ public class PshSensortoVibActivity extends Activity {
 
 		mCounterText = (TextView)findViewById(R.id.counter);
 		UpdateValueText();
-		long[] pattern = {1000, 2000, 4000, 8000, 16000};
-		mVib.vibrate(pattern, 3); 
 
 		
 		
@@ -111,10 +109,12 @@ public class PshSensortoVibActivity extends Activity {
 
 				txtresult.setText(result);
 
+				long[] pattern = {1000, 2000, 4000, 8000, 16000};
+				mVib.vibrate(pattern, 3); 
 				// X 축 흔들기 - 증가
 				if (diff[0] > mSenRange) {
 				
-					mVib.vibrate(1000);
+					mVib.vibrate(10);
 					mApplyTime = now;
 					mCounter++;
 					mCounterText.setText("" + mCounter);
@@ -125,7 +125,7 @@ public class PshSensortoVibActivity extends Activity {
 
 				// Y 축 흔들기 - 리셋
 				if (diff[1] > mSenRange) {
-					mVib.vibrate(1000);
+					mVib.vibrate(10);
 					mApplyTime = now;
 					mCounter = 100;
 					mCounterText.setText("" + mCounter);
@@ -137,7 +137,7 @@ public class PshSensortoVibActivity extends Activity {
 
 				// Z 축 흔들기 - 감소
 				if (diff[2] > mSenRange) {
-					mVib.vibrate(1000);
+					mVib.vibrate(10);
 					mApplyTime = now;
 					mCounter--;
 					mCounterText.setText("" + mCounter);
